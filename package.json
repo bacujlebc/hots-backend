@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "db:migrate": "knex migrate:latest --knexfile ./knex/hots_db/knex.config.js",
-    "db:rollback": "knex migrate:rollback --knexfile ./knex/hots_db/knex.config.js",
-    "db:seed": "knex seed:run --knexfile ./knex/hots_db/knex.config.js"
+    "db:migrate": "knex migrate:latest --knexfile ./src/knex/hots_db/knex.config.js",
+    "db:rollback": "knex migrate:rollback --knexfile ./src/knex/hots_db/knex.config.js",
+    "db:seed": "knex seed:run --knexfile ./src/knex/hots_db/knex.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,12 +15,15 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body": "^5.1.0",
     "chance": "^1.1.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "http": "0.0.0",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^0.19.4",
+    "lodash": "^4.17.15",
     "module-alias": "^2.2.1",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.2",

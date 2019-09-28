@@ -1,21 +1,19 @@
 exports.up = async (knex, Promise) => {
-    return knex.schema.createTable("users", table => {
+    return knex.schema.createTable("posts", table => {
         table
             .increments("id")
             .notNullable()
             .primary();
         table
-            .string("username")
+            .string("post")
             .notNullable()
         table
-            .string("password")
+            .timestamp('created_at')
             .notNullable()
-        table
-            .string("email")
-            .notNullable()
+            .defaultTo(knex.fn.now())
     });
 };
 
 exports.down = async (knex, Promise) => {
-    return knex.schema.dropTableIfExists("users");
+    return knex.schema.dropTableIfExists("posts");
 };

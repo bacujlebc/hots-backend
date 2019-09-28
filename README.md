@@ -8,6 +8,7 @@ In the project directory, you can run:
 1 - install Docker, node
 2 - run Docker
 3 - npm i
+4 - pgcli
 
 
 Run Postgre in docker and init DBs
@@ -33,3 +34,7 @@ username : postgres
 password : 
 
 password is empty
+
+### pgcli
+to open postgres db view
+pgcli -h localhost -p 54320 -U postgres -d hots_db
