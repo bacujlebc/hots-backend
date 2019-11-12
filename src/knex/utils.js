@@ -50,6 +50,22 @@ const deletePostById = async (id) => {
     return postId;
 }
 
+// TOURS
+const getTours = async () => {
+    const tours = await hots_db('tours')
+        .select('*')
+
+    return tours;
+}
+
+const getTourById = async (id) => {
+    const tour = await hots_db('tours')
+        .select('*')
+        .where('id', id)
+
+    return tour;
+}
+
 module.exports = {
     getUsers,
     getUserByEmail,
@@ -58,5 +74,8 @@ module.exports = {
     getPosts,
     createPost,
     getPostById,
-    deletePostById
+    deletePostById,
+
+    getTours,
+    getTourById,
 }

@@ -39,7 +39,7 @@ module.exports = (app) => {
     "/api/posts",
     utils.verifyToken,
     (req, res) => {
-      jwt.verify(req.token, 'secretkey', asyncHandler(async (err, authData) => {
+      jwt.verify(req.token, 'secretkey', asyancHandler(async (err, authData) => {
         if (err) {
           res.sendStatus(403);
         } else {

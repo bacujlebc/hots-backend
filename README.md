@@ -16,6 +16,9 @@ Run Postgre in docker and init DBs
 $ docker-compose up -d
 $ docker exec -it hots_postgres psql -U postgres -c "create database hots_db"
 
+npm run db:migrate
+npm run db:seed
+
 ```
 
 ### `npm start`
@@ -25,6 +28,9 @@ Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console..
+
+to create migration
+npx knex --knexfile=src/knex/hots_db/knex.config.js migrate:make tour
 
 ### 'postgres'
 To connect to postgres in Docker
